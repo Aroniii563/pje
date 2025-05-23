@@ -1,5 +1,5 @@
 ---
-import SplineFullScreen from '../components/SplineFullScreen.astro';
+import SplineFullScreen from "../components/SplineFullScreen.astro";
 ---
 
 <html lang="es">
@@ -7,15 +7,40 @@ import SplineFullScreen from '../components/SplineFullScreen.astro';
     <meta charset="UTF-8" />
     <title>Para jugar y eso</title>
     <style>
-      body, html {
+      body,
+      html {
         margin: 0;
         padding: 0;
-        overflow: hidden;
+        background-image: url(../assets/Purple 3D Icons - Copy@1-1876x974.jpg);
       }
+
+      div {
+        position: relative;
+        top: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
+      h1{
+        font-size: 150px;
+        color: purple;
+        font-family: sans-serif;
+      }
+
+      button {
+        max-width: 10%;
+        font-size: 40px;
+        padding: 20px;
+        border-radius: 15px;
+    }
     </style>
   </head>
   <body>
-    <SplineFullScreen />
+    <div>
+      <h1>Para jugar y eso</h1>
+      <button>Unete</button>
+    </div>
   </body>
 </html>
-
