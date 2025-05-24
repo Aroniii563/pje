@@ -1,5 +1,5 @@
 ---
-import SplineFullScreen from "../components/SplineFullScreen.astro";
+import Spline3D from "../components/Spline3D.jsx";
 ---
 
 <html lang="es">
@@ -7,40 +7,62 @@ import SplineFullScreen from "../components/SplineFullScreen.astro";
     <meta charset="UTF-8" />
     <title>Para jugar y eso</title>
     <style>
-      body,
-      html {
+      @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+      html,
+      body {
         margin: 0;
         padding: 0;
-        background-image: url(../assets/Purple 3D Icons - Copy@1-1876x974.jpg);
-      }
-
-      div {
-        position: relative;
-        top: 150px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-      }
-
-      h1{
-        font-size: 150px;
-        color: purple;
+        height: 100%;
+        overflow: hidden;
         font-family: sans-serif;
       }
 
-      button {
-        max-width: 10%;
-        font-size: 40px;
-        padding: 20px;
+      .overlay {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 10rem;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        text-transform: uppercase;
+        z-index: 10;
+        pointer-events: none;
+        background: none; /* ← SIN FONDO */
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Opcional para visibilidad */
+        background: linear-gradient(90deg, #a545d6, #e1ccec);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        /* Para Firefox */
+        background-clip: text;
+        color: transparent;
+      }
+
+      .join {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        padding: 10px;
+        transform: translate(-50%, -50%);
+        color: white;
         border-radius: 15px;
-    }
+        background-color: black;
+        font-size: 3.5rem;
+        font-family: sans-serif;
+        font-weight: bold;
+        z-index: 10;
+        pointer-events: none;
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Opcional para visibilidad */
+      }
     </style>
   </head>
   <body>
-    <div>
-      <h1>Para jugar y eso</h1>
-      <button>Unete</button>
-    </div>
+    <h1 class="overlay">Para jugar y eso</h1>
+    <button class="join">Unete</button>
+    <Spline3D client:load />
   </body>
 </html>
