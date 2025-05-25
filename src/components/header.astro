@@ -3,33 +3,91 @@ import Logo from "../assets/pje-logo.jpg";
 ---
 
 <header>
-    <setion id="logo">
-        <a href="/"><img src={Logo.src} alt="logo_del_servidor"></a>
-    </setion>
-    <setion id="links">
-        <a href="/">Inicio</a>
-        <a href="/about">Sobre PJE</a>
-        <a href="/rules">Normas</a>
-        <a href="/blog">Blog</a>
-    </setion>
-    <setion id="contact">
-        <button><a href="/contact">Contactar</a></button>
-    </setion>
+  <section id="logo">
+    <a href="/"><img src={Logo.src} alt="logo_del_servidor" /></a>
+  </section>
+
+  <nav id="links">
+    <a href="/">Inicio</a>
+    <a href="/about">Sobre PJE</a>
+    <a href="/rules">Normas</a>
+    <a href="/blog">Blog</a>
+  </nav>
+
+  <section id="contact">
+    <a href="/contact" class="btn-lindo">Contactar</a>
+  </section>
 </header>
 
 <style>
-    header{
-        position: fixed;
-        z-index: 5;
-        width: 100%;
-        backdrop-filter: blur(2.5px);
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2); /* ✅ DIFUMINADO ABAJO */
+  }
+
+  #logo{
+    margin-left: 2rem;
+  }
+
+  #logo img {
+    height: 60px;
+    border-radius: 100%;
+  }
+
+  #links {
+    display: flex;
+    gap: 3.5rem;
+  }
+
+  #links a {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #ff00cc;
+  }
+
+  #contact{
+    margin-right: 2.5rem;
+  }
+
+  .btn-lindo {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #7b2ff7, #f107a3);
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .btn-lindo:hover {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid #7b2ff7;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    #logo, #logo a, #logo a img{
-        width: 5%;
+    #links {
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
-    #logo a, #logo a img{
-        border-radius: 50px;
-    }
+  }
 </style>

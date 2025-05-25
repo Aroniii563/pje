@@ -4,7 +4,8 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Para jugar y eso">
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -70,11 +71,11 @@ import Layout from "../layouts/Layout.astro";
   <button class="btn-lindo">Únete</button>
 
   <script type="module">
-    import { Application } from 'https://cdn.skypack.dev/@splinetool/runtime';
+    import { Application } from "https://cdn.skypack.dev/@splinetool/runtime";
 
-    const canvas = document.getElementById('canvas3d');
+    const canvas = document.getElementById("canvas3d");
     const app = new Application(canvas);
 
-    app.load('https://prod.spline.design/d2ajuLLrFZIx9Eps/scene.splinecode'); // tu enlace real
+    app.load("https://prod.spline.design/d2ajuLLrFZIx9Eps/scene.splinecode"); // tu enlace real
   </script>
 </Layout>
