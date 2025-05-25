@@ -1,0 +1,35 @@
+---
+import Logo from "../assets/pje-logo.jpg";
+---
+
+<header>
+    <setion id="logo">
+        <a href="/"><img src={Logo.src} alt="logo_del_servidor"></a>
+    </setion>
+    <setion id="links">
+        <a href="/">Inicio</a>
+        <a href="/about">Sobre PJE</a>
+        <a href="/rules">Normas</a>
+        <a href="/blog">Blog</a>
+    </setion>
+    <setion id="contact">
+        <button><a href="/contact">Contactar</a></button>
+    </setion>
+</header>
+
+<style>
+    header{
+        position: fixed;
+        z-index: 5;
+        width: 100%;
+        backdrop-filter: blur(2.5px);
+    }
+
+    #logo, #logo a, #logo a img{
+        width: 5%;
+    }
+
+    #logo a, #logo a img{
+        border-radius: 50px;
+    }
+</style>

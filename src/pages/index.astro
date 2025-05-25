@@ -1,82 +1,82 @@
 ---
-import Spline3D from "../components/Spline3D.jsx";
-import Logo from "../assets/pje-logo.jpg";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href={Logo.src} />
-    <title>Para jugar y eso</title>
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+<Layout title="Para jugar y eso">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+      z-index: 1;
+    }
 
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        overflow: hidden;
-        font-family: sans-serif;
-      }
+    .spline-wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-      .overlay {
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 10rem;
-        font-family: "Rajdhani", sans-serif;
-        font-weight: 600;
-        font-style: normal;
-        text-transform: uppercase;
-        z-index: 10;
-        pointer-events: none;
-        background: none; /* ← SIN FONDO */
-        text-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Opcional para visibilidad */
-        background: linear-gradient(90deg, #a545d6, #e1ccec);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      pointer-events: none; /* 🔒 Evita interacción (no se puede rotar) */
+    }
 
-        /* Para Firefox */
-        background-clip: text;
-        color: transparent;
-      }
+    .overlay {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 5.5rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff00cc, #3333ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      z-index: 10;
+      text-align: center;
+      pointer-events: none;
+    }
 
-      .btn-lindo {
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 0.75rem 2rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-        color: white;
-        background: linear-gradient(
-          135deg,
-          #7b2ff7,
-          #f107a3
-        ); /* ← degradado inicial */
-        border: none;
-        border-radius: 1rem;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-        transition: all 0.3s ease;
-        cursor: pointer;
-        z-index: 20;
-      }
+    .btn-lindo {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0.75rem 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(135deg, #7b2ff7, #f107a3);
+      border: none;
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      z-index: 10;
+    }
 
-      .btn-lindo:hover {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        color: white;
-      }
-    </style>
-  </head>
+    .btn-lindo:hover {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 2.5px solid #7b2ff7;
+      color: white;
+    }
+  </style>
+
   <body>
-    <h1 class="overlay">Para jugar y eso</h1>
-    <button class="btn-lindo">Únete</button>
-    <Spline3D client:load />
+    <div class="spline-wrapper">
+      <iframe
+        src="https://my.spline.design/100followers-JUanmwSZ7N1NxFP1oOkKR074/"
+        allowfullscreen></iframe>
+
+      <div class="overlay">PARA JUGAR Y ESO</div>
+      <button class="btn-lindo">Únete</button>
+    </div>
   </body>
-</html>
+</Layout>

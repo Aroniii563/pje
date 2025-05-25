@@ -1,5 +1,7 @@
 ---
 import Logo from "../assets/pje-logo.jpg";
+import Header from "../components/header.astro";
+const {title} = Astro.props;
 ---
 
 <!doctype html>
@@ -9,9 +11,10 @@ import Logo from "../assets/pje-logo.jpg";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href={Logo.src} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Para jugar y eso</title>
+		<title>{title}</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
 	</body>
 </html>
